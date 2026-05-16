@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourx - Corrected Team Layout</title>
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --robo-green: #a3ff00;
+        }
+
+        body {
+            margin: 0; background: #050505;
+            height: 100vh; overflow: hidden;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .spline-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+        }
+
+        .top-video-frame {
+            position: absolute; top: 10px; left: 45%;
+            transform: translateX(-50%);
+            width: 300px; height: 160px;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            z-index: 10; overflow: hidden;
+        }
+        .top-video-frame video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+
+        .ui-wrapper {
+            position: relative; z-index: 5;
+            width: 100%; height: 100%;
+            display: flex; justify-content: space-evenly;
+            align-items: center; 
+            padding: 0 5%; 
+            pointer-events: none;
+        }
+
+        .side-column { 
+            display: flex; flex-direction: column; gap: 15px; 
+            justify-content: center;
+        }
+
+        .glass-card {
+            pointer-events: auto; width: 220px; padding: 15px;
+            background: var(--glass); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 22px;
+            text-align: center; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .glass-card:hover { 
+            transform: scale(1.07);
+            border-color: var(--robo-green);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .profile-pic {
+            width: 55px; height: 55px; border-radius: 50%;
+            margin: 0 auto 10px; border: 2px solid var(--robo-green);
+            overflow: hidden; background: #111;
+        }
+        .profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+
+        .glass-card h3 { color: #fff; margin: 5px 0; font-size: 0.95rem; }
+        .glass-card p { color: var(--robo-green); font-size: 0.75rem; margin-bottom: 1px; }
+
+        .social-box { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .social-box a {
+            color: #ccc; font-size: 14px; width: 32px; height: 32px;
+            background: rgba(255,255,255,0.08); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none; transition: 0.3s;
+        }
+        .social-box a:hover { color: #fff; transform: translateY(-3px); border-color: var(--robo-green); }
+        
+        /* --- كود الزرار المعدل --- */
+        .uiverse-btn {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            pointer-events: auto;
+            text-decoration: none;
+
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--robo-green);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 20px rgba(163, 255, 0, 0.15);
+            cursor: pointer;
+            transition-duration: .3s;
+            overflow: hidden;
+        }
+
+        .uiverse-btn .svgIcon {
+            width: 16px;
+            transition-duration: .3s;
+            fill: var(--robo-green);
+        }
+
+        .uiverse-btn:hover {
+            width: 150px;
+            border-radius: 50px;
+            transition-duration: .3s;
+            background-color: var(--robo-green);
+            align-items: center;
+            box-shadow: 0px 0px 30px rgba(163, 255, 0, 0.4);
+        }
+
+        .uiverse-btn:hover .svgIcon {
+            width: 50px;
+            transition-duration: .3s;
+            transform: translateY(60%);
+            opacity: 0;
+        }
+
+        .uiverse-btn::before {
+            position: absolute;
+            top: -20px;
+            content: "المشروع";
+            color: #000;
+            transition-duration: .3s;
+            font-size: 2px;
+            font-family: 'Cairo', sans-serif;
+            white-space: nowrap;
+        }
+
+        .uiverse-btn:hover::before {
+            font-size: 15px;
+            opacity: 1;
+            transform: translateY(31px); /* بيظبط الكلمة في النص بالظبط */
+            transition-duration: .3s;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="spline-bg">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.92/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/QAR25nzAoiy5D6hi/scene.splinecode"></spline-viewer>
+    </div>
+
+    <div class="top-video-frame">
+        <video autoplay muted loop playsinline><source src="تر.mp4" type="video/mp4"></video>
+    </div>
+
+    <div class="ui-wrapper">
+        <div class="side-column">
+            <div class="glass-card">
+                <div class="profile-pic"><img src="mo.jpeg"></div>
+                <h3>MOHAMMED GOMAA</h3><p>مطور واجهات</p>
+                <div class="social-box">
+                    <a href="https://www.facebook.com/share/18agMqbncp/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/mohammed_gomaa_2?utm_source=qr&igsh=aDNkNXlmOWp1NXdp"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/qr/53IX6JH4VDFKL1"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/in/mohammed-gomaa-1328bb3a2?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/mohammedgomaa19334-wq?tab=projects"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="glass-card">
+                <div class="profile-pic"><img src="youssef.jpeg"></div>
+                <h3>Youssef Khaled</h3><p></p>
+                <div class="social-box">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="glass-card">
+                <div class="profile-pic"><img src="rafet.jpeg"></div>
+                <h3>Mohamed Raafat</h3><p></p>
+                <div class="social-box">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-column">
+            <div class="glass-card">
+                <div class="profile-pic"><img src="p4.jpg"></div>
+                <h3>Mohamed Adel</h3><p></p>
+                <div class="social-box">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="glass-card">
+                <div class="profile-pic"><img src="p5.jpg"></div>
+                <h3>Mahrous Abdel Halim</h3><p></p>
+                <div class="social-box">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="glass-card">
+                <div class="profile-pic"><img src="reda.jpeg"></div>
+                <h3>Reda Hosny</h3><p></p>
+                <div class="social-box">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الزرار الجديد في مكانه الصح كـ Link -->
+    <a href="index.html" class="uiverse-btn">
+        <svg class="svgIcon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/>
+        </svg>
+    </a>
+    
+</body>
+</html>
